@@ -1,0 +1,513 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background:#0d1117;
+    color:white;
+    display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+padding-top:40px;
+}
+.container{
+width:450px;
+max-width:100%;
+background:#161b22;
+padding:30px;
+border-radius:15px;
+}
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+.search-box{
+    display:flex;
+    gap:10px;
+}
+input{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#238636;
+    color:white;
+    font-weight:bold;
+}
+button:hover{
+    background:#2ea043;
+}
+#profile{
+    margin-top:30px;
+    width: 100%;
+}
+.profile-card {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 15px;
+    background:#ffffff;
+    color: #222;
+text-align:center;
+max-width:350px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.profile-card .avatar {
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.profile-card h2 {
+margin: 15px 0 5px;
+}
+
+.profile-card p {
+margin: 8px 0;
+}
+
+.profile-card a {
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration: none;
+    background: #24292e;
+    color:white;
+    transition: 0.2s ease;
+}
+.profile-card a: hover {
+background: #238636;
+transform: translateY(-2px);
+}
+.stats {
+display: flex;
+justify-content: space-around;
+margin: 20px 0;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+.stats strong {
+    font-size:20px;
+    display: block;
+}
+.stats span {
+    font-size:14px;
+    color: #666;
+}
+.repositories {
+    margin-top: 25px;
+    padding: 20px;
+    background: #161b22;
+    border-radius: 15px;
+}
+
+.repositories h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.repo {
+    background: #ffffff;
+    color: #222;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.repo h4 {
+    margin-bottom: 8px;
+}
+
+.repo p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.repo a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    background: #24292e;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.repo a:hover {
+    background: #238636;
+}
+.repositories h3 {
+    color:white;
+}
+.profile-info {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.profile-info p {
+    margin: 8px 0;
+}
+
+.profile-info a {
+    color: #238636;
+    text-decoration: none;
+}
+
+.profile-info a:hover {
+    text-decoration: underline;
+}
+#repositories {
+    width: 400px;
+    max-width: 100%;
+    margin: 30px auto;
+}
+@media (max-width:600px){
+    body{
+        padding:20px;
+    }
+
+    .container{
+        padding:20px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    input,
+    button{
+        width:100%;
+    }
+
+    .profile-card{
+        max-width:100%;
+    }
+}
+.loading {
+    text-align: center;
+    padding: 30px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border: 4px solid #444;
+    border-top-color: #238636;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading p {
+    color: #aaa;
+    margin: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.error-message {
+    background: #2d1b1b;
+    border: 1px solid #8b3a3a;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-message strong {
+    display: block;
+    color: #ff6b6b;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.error-message p {
+    color: #ccc;
+    margin: 0;
+    font-size: 14px;
+}
+.profile-card {
+    animation: profileIn 0.5s ease-out;
+}
+
+@keyframes profileIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.repo {
+    animation: repoIn 0.4s ease-out both;
+}
+
+.repo:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.repo:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.repo:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.repo:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes repoIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.repo {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
+
+    #repositories {
+        width: 100%;
+    }
+}
+/* --- UI POLISH --- */
+
+body {
+    background: linear-gradient(135deg, #0d1117, #161b22);
+}
+
+.container {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.search-box input {
+    transition: 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(35, 134, 54, 0.35);
+}
+
+button {
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.profile-card {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    transition: 0.25s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+}
+
+.profile-card .avatar {
+    border: 4px solid #238636;
+}
+
+.stats {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.repo {
+    transition: 0.2s ease;
+}
+
+.repo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.repo-stats {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.repo-stats span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.repo {
+    border: 1px solid #d0d7de;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.repo h4 {
+    color: #24292f;
+    font-size: 18px;
+}
+
+.repo-stats {
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.repo-stats span:last-child {
+    font-weight: bold;
+    color: #238636;
+}
+.repo {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
+
+    #repositories {
+        width: 100%;
+    }
+}
+.repo-date {
+    font-size: 13px;
+    color: #888;
+    margin: 10px 0;
+}
+.repo-date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+.repo {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.repo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+.repo-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.repo-stats span:last-child {
+    font-weight: bold;
+}
+.repo p {
+    line-height: 1.5;
+}
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #repositories {
+        width: 100%;
+    }
+
+    .profile-card {
+        max-width: 100%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+}
+.profile-card a {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.profile-card a:hover {
+    background: #238636;
+    transform: translateY(-2px);
+}
