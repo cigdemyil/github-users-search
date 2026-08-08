@@ -1,4 +1,3 @@
-##Github Kullanıcı Arama
 Ben Çiğdem. Github API kullanılarak kullanıcı adıyla github kullanıcılarını arayan bir web geliştirdim. Kullanıcıların profil bilgileri, takipçi ve takip edilen sayıları, repository bilgileri, kullanılan proglamlama dilleri yıldız ve fork sayıları ile son güncelleme tarihleri görüntülenebiliyor.
 GitHub API kullanılarak geliştirilmiş bir GitHub kullanıcı arama web uygulaması.
 
